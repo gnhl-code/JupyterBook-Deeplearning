@@ -21,4 +21,5 @@ parts:
       - file: lectures/lecture4
       - file: lectures/lecture5
       - file: lectures/lecture6
+      - file: final-project-deliverables/week1NR
  
