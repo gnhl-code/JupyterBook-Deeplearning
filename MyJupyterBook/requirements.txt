@@ -3,3 +3,5 @@ matplotlib
 numpy
 torch
 scikit-learn
+torchvision
+datasets
