@@ -30,7 +30,7 @@ jobs:
         run: |
           pip install -r MyJupyterBook/requirements.txt
           pip install jupyter-book
-          pip install torchvision
+          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install datasets
           pip install transformers
           pip install torch
