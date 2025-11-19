@@ -30,6 +30,9 @@ jobs:
         run: |
           pip install -r MyJupyterBook/requirements.txt
           pip install jupyter-book
+          pip install torchvision
+          pip install datasets
+          pip install transformers
 
       - name: Check Jupyter Book version
         run: jupyter-book --version
