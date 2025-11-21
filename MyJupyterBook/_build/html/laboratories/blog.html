@@ -409,7 +409,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-interpretation-impact-of-learning-rate-on-model-loss">Results &amp; Interpretation: Impact of Learning Rate on Model Loss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
 </ul>
             </nav>
@@ -489,7 +488,6 @@ For optimizers like Adam, RMSProp, and SGD, the default LR is often set to value
 </section>
 <section id="to-understand-learning-rates-in-action">
 <h2>To understand learning rates in action<a class="headerlink" href="#to-understand-learning-rates-in-action" title="Link to this heading">#</a></h2>
-<p>we will experiment how learning rate affects training</p>
 <p><strong>To understand learning rates in action, we trained a simple Convolutional Neural Network (CNN) on the MNIST handwritten digit dataset.</strong></p>
 <section id="experiment-setup">
 <h3>Experiment Setup<a class="headerlink" href="#experiment-setup" title="Link to this heading">#</a></h3>
@@ -534,14 +532,13 @@ For optimizers like Adam, RMSProp, and SGD, the default LR is often set to value
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torchvision</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torchvision</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torchvision.transforms</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">transforms</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">datasets</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">datasets</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;torchvision&#39;
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;datasets&#39;
 </pre></div>
 </div>
 </div>
@@ -625,25 +622,6 @@ For optimizers like Adam, RMSProp, and SGD, the default LR is often set to value
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LR=0.0001, Epoch=1, Loss=0.3996
-LR=0.0001, Epoch=2, Loss=0.3550
-LR=0.0001, Epoch=3, Loss=0.0480
-LR=0.0001, Epoch=4, Loss=0.0548
-LR=0.0001, Epoch=5, Loss=0.0223
-LR=0.001, Epoch=1, Loss=0.2408
-LR=0.001, Epoch=2, Loss=0.0490
-LR=0.001, Epoch=3, Loss=0.0055
-LR=0.001, Epoch=4, Loss=0.1282
-LR=0.001, Epoch=5, Loss=0.1124
-LR=0.01, Epoch=1, Loss=0.0143
-LR=0.01, Epoch=2, Loss=0.0122
-LR=0.01, Epoch=3, Loss=0.0594
-LR=0.01, Epoch=4, Loss=0.0993
-LR=0.01, Epoch=5, Loss=0.0070
-</pre></div>
-</div>
-</div>
 </div>
 <ol class="arabic simple" start="6">
 <li><p>Plot Loss Curves</p></li>
@@ -662,26 +640,6 @@ LR=0.01, Epoch=5, Loss=0.0070
 </div>
 </div>
 </section>
-</section>
-<section id="results-interpretation-impact-of-learning-rate-on-model-loss">
-<h2>Results &amp; Interpretation: Impact of Learning Rate on Model Loss<a class="headerlink" href="#results-interpretation-impact-of-learning-rate-on-model-loss" title="Link to this heading">#</a></h2>
-<p>The experiment evaluated the training loss across 5 epochs using three distinct learning rates (LR): <span class="math notranslate nohighlight">\(\alpha = 0.0001\)</span>, <span class="math notranslate nohighlight">\(0.001\)</span>, and <span class="math notranslate nohighlight">\(0.01\)</span>. The results demonstrate the high sensitivity of the optimizer to learning rate selection.</p>
-<p><strong>1. Optimal Performance:</strong> <span class="math notranslate nohighlight">\(\alpha = 0.001\)</span> (Orange)This setting demonstrated the most stable and efficient convergence.</p>
-<ul class="simple">
-<li><p>Behavior: The loss curve exhibits a steep and consistent decline, reaching near-zero loss by Epoch 2.</p></li>
-<li><p>Result: It achieves the lowest final loss among all tested parameters without exhibiting significant oscillation.</p></li>
-<li><p>Interpretation: This aligns with standard literature (e.g., Kingma &amp; Ba, 2015) suggesting <span class="math notranslate nohighlight">\(10^{-3}\)</span> is often a robust starting point for Adam and similar optimizers.</p></li>
-</ul>
-<p><strong>2. High Learning Rate:</strong> <span class="math notranslate nohighlight">\(\alpha = 0.01\)</span> (Green)While the model successfully reduced loss, it exhibited signs of sub-optimal optimization compared to the baseline.</p>
-<ul class="simple">
-<li><p>Behavior: The model converged relatively quickly but maintained a slightly higher loss floor compared to the optimal rate (<span class="math notranslate nohighlight">\(\alpha = 0.001\)</span>).</p></li>
-<li><p>Interpretation: The slightly elevated loss suggests the step size may be too large to settle into the deepest part of the loss minimum, a phenomenon known as “overshooting” or oscillation around the global minimum.</p></li>
-</ul>
-<p><strong>3. Low Learning Rate:</strong> <span class="math notranslate nohighlight">\(\alpha = 0.0001\)</span> (Blue)This setting resulted in the poorest performance, exhibiting significant instability in this specific trial.</p>
-<ul class="simple">
-<li><p>Behavior: While the loss initially decreased, the model diverged significantly in later epochs (Epochs 3–4), ending with the highest loss value (<span class="math notranslate nohighlight">\(\approx 0.34\)</span>).</p></li>
-<li><p>Interpretation: Typically, a low learning rate results in slow, linear convergence (underfitting). However, the drastic spike observed here suggests the model may have become trapped in a poor local minimum or encountered an optimization instability often seen in non-convex loss landscapes.</p></li>
-</ul>
 </section>
 <section id="key-takeaways">
 <h2>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
@@ -716,16 +674,16 @@ Academic Sources</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-base-py"
+            mode: "python"
         },
         kernelOptions: {
-            name: "conda-base-py",
+            name: "python3",
             path: "./laboratories"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-base-py'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -770,7 +728,6 @@ Academic Sources</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-interpretation-impact-of-learning-rate-on-model-loss">Results &amp; Interpretation: Impact of Learning Rate on Model Loss</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
 </ul>
   </nav></div>
