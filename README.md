@@ -1,6 +1,5 @@
-# DeepLearning
-
+# DeepLearning - DS Elective 4
 ---
 
-site link:
+Jupyter Book site link:
 https://gnhl-code.github.io/DeepLearning/
