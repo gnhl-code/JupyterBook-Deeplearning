@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1 Background of the Study &#8212; Genny&#39;s Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'final-project-deliverables/phase1ppr';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logomine.png" class="logo__image only-light" alt="Genny's Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logomine.png" class="logo__image only-dark" alt="Genny's Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Hi there!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures and Laboratories</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/lecture1.html">Lesson 1: Foundational Concept of Deep Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lecturetasks/lecturetask1.html">Lecture Task 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory1.html">Laboratory Task 1</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/lecture2.html">Lesson 2: Understanding Deep Learnin</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory2.html">Laboratory Task 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory3.html">Laboratory Task 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory4.html">Laboratory Task 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory5.html">Laboratory Task 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture3.html">PyTorch Tensor Objects Attributes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture4.html">Main Types of Deep Learning Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture5.html">Lesson 3: Applications of Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture6.html">CNN Implementation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="phase2ppr.html">2 Methodology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week2NR.html">Phase 2 - Narrative Report</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Blog</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../laboratories/blog.html">Riding the Learning Curve: How a Single Number Decides Whether Your Neural Network Succeeds or Crashes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/gnhl-code/DeepLearning" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/gnhl-code/DeepLearning/issues/new?title=Issue%20on%20page%20%2Ffinal-project-deliverables/phase1ppr.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/final-project-deliverables/phase1ppr.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1 Background of the Study</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chronic-respiratory-diseases">1.1 Chronic Respiratory Diseases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventional-diagnostic-approaches-and-real-world-challenges">1.2 Conventional Diagnostic Approaches and Real-World Challenges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-studies-on-respiratory-sound-classification-and-research-gaps">1.3 Existing Studies on Respiratory Sound Classification and Research Gaps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-1-1-related-works-and-research-gaps-in-deeplearning-respiratory-sound-classification">Table 1.1. Related Works and Research Gaps in Deep‑Learning Respiratory Sound Classification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-waveformbased-deep-learning-architectures-for-respiratory-sound-analysis">1.4 Raw Waveform–Based Deep Learning Architectures for Respiratory Sound Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-of-the-study">Objectives of the Study</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="background-of-the-study">
+<h1>1 Background of the Study<a class="headerlink" href="#background-of-the-study" title="Link to this heading">#</a></h1>
+<section id="chronic-respiratory-diseases">
+<h2>1.1 Chronic Respiratory Diseases<a class="headerlink" href="#chronic-respiratory-diseases" title="Link to this heading">#</a></h2>
+<p>Chronic respiratory diseases (CRDs) continue to impose a substantial health burden, with the Global Burden of Disease Study 2021 estimating over 55 million incident cases, predominantly asthma and chronic obstructive pulmonary disease (COPD). This study highlights complex regional patterns in morbidity and mortality, noting 4.4 million deaths attributed to CRDs in 2021, although age-standardized mortality rates have declined over the past decades, reflecting some progress in disease management (Momtazmanesh et al., 2023a). Within this global context, Southeast Asia bears particular concern, where CRDs account for approximately 12% of all deaths. COPD and asthma contribute most significantly to premature mortality, with environmental and socioeconomic factors such as high exposure to outdoor and household air pollution from biomass fuel use posing significant risks in many countries (WHO Southeast Asia Region, 2019). In the Philippines specifically, lung disease remains a critical public health issue; a study in Nueva Ecija found that 20.8% of adults aged 40 and older have COPD, with significant associations to biomass fuel exposure and smoking. Financial impacts are also considerable, as evidenced by recent research highlighting substantial out-of-pocket expenses for Filipino patients hospitalized due to acute COPD exacerbations (Idolor et al., 2011; Ang &amp; Fernandez, 2024).</p>
+<p>Fundamentally, chronic respiratory diseases encompass a wide range of disorders that impair respiratory and pulmonary functions, significantly affecting an individual’s breathing and oxygen exchange. These diseases include chronic obstructive pulmonary disease (COPD), asthma, interstitial lung disease, lung infections such as pneumonia, and lung cancer. Common symptoms often include breathlessness, chronic cough (either productive or dry), wheezing, chest pain, and sometimes sputum production. Additional symptoms may involve fatigue, fever, and reduced exercise tolerance, which vary depending on the specific disease and its severity. The underlying causes are multifactorial, including environmental exposures like smoking and pollution, infections, and occupational hazards, all contributing to inflammation, airway obstruction, or lung tissue scarring (Singh, 2016; Mayo Clinic, nd; NIEHS, nd). Identification of abnormal lung sounds such as crackles and wheezes during auscultation plays a vital role in clinical evaluation. Crackles often indicate fluid or fibrosis in the lungs, while wheezes suggest airway narrowing or obstruction. These sounds help in early diagnosis, differentiation between diseases, and monitoring treatment response, making auscultation a cornerstone of respiratory assessment (Zimmerman, 2023). Together, these perspectives underscore the urgent need for targeted public health interventions addressing environmental exposures, healthcare access, and disease management to mitigate the ongoing burden of chronic respiratory diseases globally and regionally.</p>
+</section>
+<section id="conventional-diagnostic-approaches-and-real-world-challenges">
+<h2>1.2 Conventional Diagnostic Approaches and Real-World Challenges<a class="headerlink" href="#conventional-diagnostic-approaches-and-real-world-challenges" title="Link to this heading">#</a></h2>
+<p>In contemporary clinical practice, physicians still rely heavily on traditional physical examination techniques—such as auscultation, percussion, palpation, and vocal resonance—as primary and accessible tools for assessing lung function. Despite their widespread use, these methods have important limitations that can reduce diagnostic accuracy, even when performed by experienced clinicians.</p>
+<p>A major limitation of auscultation is its low sensitivity. A meta-analysis of 34 studies involving adult patients with acute pulmonary conditions found that lung auscultation had a pooled sensitivity of only 37% and a specificity of 89% (Arts et al., 2020). This indicates that auscultation may fail to detect a substantial number of true respiratory pathologies, limiting its reliability as a stand-alone diagnostic tool.</p>
+<p>Auscultation is also less accurate in mechanically ventilated patients. In a study of 200 post–cardiac surgery patients, two independent examiners (blinded to mechanical measurements) performed chest auscultation. They correctly identified decreased or absent breath sounds or crackles in only 34 % of cases for examiner A and 42 % for examiner B. Sensitivities were 25.1% and 36.4%, respectively, while specificities were moderately higher at 68.3% and 63.4% (Xavier, Melo‑Silva, Santos, &amp; Amado, 2019). These findings demonstrate that auscultation may not reliably reflect underlying lung function in such patients.</p>
+<p>Interobserver variability further limits reliability. In a longitudinal study of patients with fibrotic interstitial lung disease, nine respiratory physicians independently assessed crackles at baseline and 12 months. Agreement on the presence of crackles yielded a Fleiss’ κ of 0.57 (95% CI: 0.55–0.58), and agreement on changes in crackle intensity over time was lower (κ = 0.42, 95% CI: 0.41–0.43) (Sgalla et al., 2024). Although individual physicians were more consistent over time (intra-rater κ = 0.79–0.87), the moderate agreement between different physicians highlights persistent subjectivity in interpretation.</p>
+<p>Terminology inconsistencies also contribute to diagnostic challenges. A survey of staff physicians, residents, and medical students found that only approximately 63% of staff physicians and 69% of residents correctly identified crackles, while many used incorrect terms. The study concluded that insufficient auscultation skill, rather than personal preference, was a major factor (Vasquez &amp; Ruiz, 2020). Lack of standardized terminology can lead to miscommunication and misinterpretation among clinicians.</p>
+<p>Other physical examination signs also have limitations. A review of patients presenting with dyspnea found that features such as asymmetric chest expansion, diminished breath sounds, egophony, bronchophony, and tactile fremitus may assist in diagnosing pneumonia or pleural effusion. However, for early-stage chronic obstructive pulmonary disease (COPD), no single physical sign demonstrated high accuracy (Shellenberger et. al, 2017). Many signs are particularly insensitive in early or mild disease.</p>
+<p>Spirometry remains an essential tool in the traditional assessment of lung function. It provides objective measurements of airflow, including forced expiratory volume in one second (FEV₁), forced vital capacity (FVC), and the FEV₁/FVC ratio, which are critical for diagnosing and staging obstructive lung diseases such as asthma and COPD (singh et. al, 2025; agusti et. al, 2023). While spirometry provides reproducible and quantitative data that physical examination alone cannot deliver, its accuracy depends on proper technique and patient cooperation. Additionally, it may be difficult to perform in acute or critically ill patients and in resource-limited settings where equipment or trained personnel are unavailable.</p>
+<p>Overall, traditional respiratory assessment methods face several limitations—such as the low sensitivity of auscultation, high subjectivity, variable clinician interpretation, and the reduced diagnostic value of physical signs in early or subtle disease. These constraints make it difficult to reliably detect faint or transient abnormalities, particularly early-stage crackles and wheezes that may signal evolving pulmonary pathology. As a result, there is increasing motivation to explore automated analysis systems capable of providing more objective, sensitive, and reproducible respiratory sound interpretation.</p>
+</section>
+<section id="existing-studies-on-respiratory-sound-classification-and-research-gaps">
+<h2>1.3 Existing Studies on Respiratory Sound Classification and Research Gaps<a class="headerlink" href="#existing-studies-on-respiratory-sound-classification-and-research-gaps" title="Link to this heading">#</a></h2>
+<p>Automated respiratory sound classification has progressed substantially through deep learning, enabling improved detection of abnormal lung sounds such as crackles, wheezes, and mixed adventitious sounds. A recent state-of-the-art contribution is the work of Kim, Kim, Leem, and colleagues (2025), who developed an enhanced respiratory sound classification system combining Convolutional Neural Networks (CNNs) and Bidirectional Long Short-Term Memory networks (BiLSTMs). Their architecture processed mel-spectrogram inputs extracted from multichannel digital stethoscope recordings and utilized a classification strategy based on focal loss to address dataset imbalance. Evaluated on four respiratory sound categories—normal, crackles, wheezes, and rhonchi—their model achieved an accuracy of 85.7%, surpassing both medical trainees and subspecialty fellows. Their work highlights the importance of temporal modeling (via LSTM layers), spatial feature extraction (via CNN layers), and the benefits of multi-channel auscultation.</p>
+<p>Datasets have played a critical role in advancing this field. The ICBHI 2017 Respiratory Sound Database remains the global benchmark, containing 6,898 respiratory cycles labeled as normal, crackle, wheeze, or both (ICBHI Challenge, 2017). Despite its widespread use, the dataset suffers from severe class imbalance, particularly in the mixed both category. The more recent dataset by Huang et al. (2023), collected via an intelligent digital stethoscope, mirrors this imbalance: 3,642 normal cycles, 1,864 crackles, 886 wheezes, and 506 mixed sounds. These distribution issues adversely affect model generalizability, especially in minority classes where sensitivity remains low even in high-performing models.</p>
+<p>Existing deep-learning methodologies vary in feature representation and architectural design. A large body of work has centered on time–frequency representations, especially MFCCs and mel-spectrograms, which are then fed into CNNs or CRNNs. Rocha et al. (2020) showed that combining handcrafted features with CNN-based spectrogram learning improves classification reliability. Wang et al. (2024) systematically compared different input representations and found that mel-spectrograms consistently outperform raw audio in traditional CNN setups—although they inevitably lose micro-temporal details essential for detecting fine crackles (lasting only a few milliseconds).</p>
+<p>Motivated by these limitations, several researchers have turned toward raw waveform–based models that process unaltered respiratory audio. Early studies (Abduh et al., 2018; Perna et al., 2018; Kochetov et al., 2018) demonstrated that 1D CNNs trained directly on waveforms can effectively detect crackles and wheezes without hand-designed features. These models capture detailed temporal signatures, including amplitude spikes and short transient events that spectrograms often smooth out. More recently, Temporal Convolutional Networks (TCNs) have gained traction. Fernando et al. (2021, 2022) showed that dilated causal convolutions can capture inhalation–exhalation dynamics, transient crackles, and sequential respiratory patterns with high temporal fidelity. Their work emphasized interpretability and robustness, demonstrating improved performance under varied breathing patterns.</p>
+<p>Beyond medical-specific models, general-purpose lightweight raw-audio architectures such as LEAN (Choudhary et al., 2023) have introduced efficient waveform encoders that can be adapted to medical audio tasks. Although LEAN has not been directly applied to respiratory sounds, its dual-branch design (raw waveform + log-mel) provides valuable insights for building computationally efficient models.</p>
+<p>Despite these advancements, several research gaps persist. First, many studies—including Kim et al. (2025)—focus on spectrogram-based features, leaving raw waveform models underexplored, especially in multi-class respiratory tasks. Second, most studies evaluate one model architecture, limiting fair comparison across architectures under unified training conditions. Third, although Kim et al. (2025) and others use data augmentation (e.g., noise injection, pitch shifting), explicit robustness testing across different recording conditions, devices, and auscultation sites remains limited. Fourth, severe class imbalance persists across datasets, and while techniques like focal loss or oversampling partially mitigate this, minority-class performance remains significantly lower than for normal or crackle classes. Finally, few studies systematically analyze class-wise error patterns, which are crucial for understanding real-world misclassification risks.</p>
+<p>Given these limitations, the present study aims to systematically compare multiple architectures—including raw waveform models (RawNet-inspired, TCN variants) and spectrogram-based baselines—under a unified pipeline. This includes evaluating class-wise performance, implementing imbalance-handling strategies, and conducting controlled robustness evaluations. The study is conducted entirely in a notebook environment for feasibility within the project timeline.</p>
+<section id="table-1-1-related-works-and-research-gaps-in-deeplearning-respiratory-sound-classification">
+<h3>Table 1.1. Related Works and Research Gaps in Deep‑Learning Respiratory Sound Classification<a class="headerlink" href="#table-1-1-related-works-and-research-gaps-in-deeplearning-respiratory-sound-classification" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>RESEARCH GAPS</p></th>
+<th class="head"><p>DESCRIPTION</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Class imbalance and limited generalizability</p></td>
+<td><p>Common datasets (ICBHI, Huang et al.) contain underrepresented classes such as wheezes and both, causing biased models with low minority-class sensitivity.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Overreliance on spectrogram-based inputs</p></td>
+<td><p>Most models rely on MFCC or mel-spectrogram features, which lose fine temporal details critical for detecting short‑duration crackles.</p></td>
+</tr>
+<tr class="row-even"><td><p>Underexplored raw‑waveform modeling</p></td>
+<td><p>While early works show strong potential for raw waveform architectures, modern systems still rarely integrate end-to-end raw audio learning.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lack of multi‑model architectural comparisons</p></td>
+<td><p>Most works evaluate only one model architecture, preventing fair comparison of CNNs, TCNs, CapsNets, or raw‑audio models under consistent conditions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Limited real‑world robustness evaluation</p></td>
+<td><p>Although augmentation is common, few studies explicitly test models under varying noise levels, devices, chest sites, or demographic factors.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Insufficient analysis of class‑wise error patterns</p></td>
+<td><p>Many works emphasize overall accuracy but do not analyze misclassification trends for clinically significant minority classes such as wheezes and mixed sounds.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="raw-waveformbased-deep-learning-architectures-for-respiratory-sound-analysis">
+<h2>1.4 Raw Waveform–Based Deep Learning Architectures for Respiratory Sound Analysis<a class="headerlink" href="#raw-waveformbased-deep-learning-architectures-for-respiratory-sound-analysis" title="Link to this heading">#</a></h2>
+<p>Automated respiratory sound analysis plays a critical role in the early detection of pulmonary abnormalities such as crackles and wheezes, which are indicative of conditions including pneumonia, chronic obstructive pulmonary disease, and heart failure. Traditional approaches to lung sound classification have predominantly relied on time–frequency representations, particularly mel‑spectrograms, as input to convolutional neural networks or recurrent architectures. Such representations effectively summarize the spectral content over time, enabling models to learn frequency‑based features efficiently. Spectrogram-based models have achieved strong performance in prior research and are widely accepted for sound classification tasks (Choudhary, Karthik, Lakshmi, &amp; Kumar, 2023). However, these representations inherently involve transformations such as the short-time Fourier transform, which may lead to the loss of subtle temporal and phase information essential for accurately identifying brief or transient events such as fine crackles.</p>
+<p>To address these limitations, the study focuses on raw audio waveform input, which preserves the complete temporal structure of lung sounds. Learning directly from raw audio enables the model to capture both short-duration crackles and longer-duration wheezes without relying on feature engineering or spectrogram approximations. This underexplored approach offers an opportunity to evaluate how much temporal fidelity and detail can be leveraged to improve the accuracy of abnormal lung sound detection.</p>
+<p>Among deep learning architectures suitable for raw audio, three models were identified for experimentation:</p>
+<ol class="arabic simple">
+<li><p><strong>RawNet</strong> – an end-to-end network originally developed for speaker verification, capable of learning embeddings directly from waveforms (Jung, Heo, Kim, Shim, &amp; Yu, 2019). Its architecture includes one-dimensional convolutional layers, residual connections, and feature‑map scaling (MR‑RawNet) to extract temporal features at multiple resolutions (Jung, Kim, Shim, Kim, &amp; Yu, 2020).</p></li>
+<li><p><strong>Temporal Convolutional Networks (TCNs)</strong> – employ dilated causal convolutions and residual connections to model long-range temporal dependencies efficiently. Unlike recurrent networks, TCNs can process sequences in parallel while preserving causality, which is critical when detecting sequential patterns in breathing cycles. TCNs have demonstrated strong performance in lung sound event detection, identifying inhalation, exhalation, crackles, and wheezes with high accuracy (Fernando, Sridharan, Denman, Ghaemmaghami, &amp; Fookes, 2021; Fernando et al., 2022).</p></li>
+<li><p><strong>LEAN (Light and Efficient Audio Network)</strong> – represents a lightweight yet effective approach, incorporating a wave encoder for raw audio alongside a pre‑trained log‑mel branch fused through cross‑attention mechanisms (Choudhary et al., 2023).</p></li>
+</ol>
+<p>The combination of these three architectures allows the study to explore complementary modeling strategies for raw audio: RawNet provides end-to-end embedding extraction with multi-resolution temporal modeling, TCN captures long-range dependencies and interpretable temporal patterns, and LEAN balances efficiency with temporal and spectral feature fusion. By experimenting with these models, the study can assess not only the accuracy of abnormal lung sound detection but also how different architectures preserve and exploit temporal structure in raw audio — an aspect that remains underexplored compared with spectrogram-based approaches.</p>
+</section>
+<section id="objectives-of-the-study">
+<h2>Objectives of the Study<a class="headerlink" href="#objectives-of-the-study" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>To compare multiple deep-learning architectures</strong> for four-class respiratory sound classification, with emphasis on models that learn directly from raw lung-sound waveforms, while using time‑frequency representations as secondary benchmarks to identify the most effective model design.</p></li>
+<li><p><strong>To examine how hyperparameter-tuning strategies and imbalance‑handling techniques</strong> (such as class-balancing methods or augmentation approaches) influence the performance of the selected raw-audio model, with the goal of improving macro‑averaged F1-score and sensitivity for minority classes such as wheezes and both.</p></li>
+<li><p><strong>To evaluate the generalizability of the optimized model</strong> using a hold-out test set, assessing its class-wise performance, error tendencies, and robustness to determine its suitability for real-world or clinical application.</p></li>
+</ol>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Abduh, M., Moussavi, Z., &amp; Heo, G. (2018). Automatic crackle detection using end-to-end deep learning. <em>Proceedings of the Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)</em>, 2474–2477. <a class="reference external" href="https://doi.org/10.1109/EMBC.2018.8512801">https://doi.org/10.1109/EMBC.2018.8512801</a></p></li>
+<li><p>Agustí, A., Celli, B. R., Criner, G. J., Halpin, C. F., Anzueto, A., Barnes, P., … Vogelmeier, C. F. (2023). Global Initiative for Chronic Obstructive Lung Disease 2023 Report: GOLD Executive Summary. <em>American Journal of Respiratory and Critical Care Medicine</em>, 207(7), 819–837. <a class="reference external" href="https://doi.org/10.1164/rccm.202301-0106pp">https://doi.org/10.1164/rccm.202301-0106pp</a></p></li>
+<li><p>Ang, B. W., &amp; Fernandez, L. (2024). A prospective study on direct out-of-pocket expenses of hospitalized patients with acute exacerbation of chronic obstructive pulmonary disease in a Philippine tertiary care center. <em>BMC Pulmonary Medicine</em>, 24(1), 184. <a class="reference external" href="https://doi.org/10.1186/s12890-024-03011-y">https://doi.org/10.1186/s12890-024-03011-y</a></p></li>
+<li><p>Arts, L., Lim, E. H. T., van de Ven, P. M., Heunks, L., &amp; Tuinman, P. R. (2020). The diagnostic accuracy of lung auscultation in adult patients with acute pulmonary pathologies: a meta‑analysis. <em>Scientific Reports</em>, 10(1), 7347. <a class="reference external" href="https://doi.org/10.1038/s41598-020-64405-6">https://doi.org/10.1038/s41598-020-64405-6</a></p></li>
+<li><p>Xavier, G., Melo‑Silva, C. A., Santos, C. E. V. G., &amp; Amado, V. M. (2019). Accuracy of chest auscultation in detecting abnormal respiratory mechanics in the immediate postoperative period after cardiac surgery. <em>Jornal Brasileiro de Pneumologia</em>, 45(5), e20180032. <a class="reference external" href="https://doi.org/10.1590/1806-3713/e20180032">https://doi.org/10.1590/1806-3713/e20180032</a></p></li>
+<li><p>Rocha, B. M., Filos, D., &amp; Pereira, J. M. (2020). A respiratory sound classification system: Combining feature-based and deep-learning approaches. <em>Sensors</em>, 21(1), 57.</p></li>
+<li><p>Wang, X., Li, Z., Zhang, L., &amp; Zhou, Y. (2024). Performance evaluation of deep-learning models for lung sound classification under different input representations. <em>EURASIP Journal on Advances in Signal Processing</em>, 2024(1), 11.</p></li>
+<li><p>Huang, Y., Li, L., Luo, Y., Xiong, Z., Li, H., Luo, J., &amp; Wei, M. (2023). Establishment of a respiratory sound database using a digital intelligent stethoscope. <em>Military Medical Research</em>, 10(1), 27.</p></li>
+<li><p>ICBHI Challenge. (2017). ICBHI 2017 Respiratory Sound Database.</p></li>
+<li><p>Srivastava, A., Gupta, S., &amp; Sharma, R. (2025). Deep-learning-based respiratory sound analysis for detection of chronic obstructive pulmonary disease. <em>Journal of Clinical Medicine</em>.</p></li>
+<li><p>Tzeng, Y., Huang, Y., &amp; Chen, L. (2025). Noise‑robust deep learning methods for respiratory sound analysis: Challenges and opportunities. <em>Electronics</em>, 14, 2794.</p></li>
+<li><p>Yu, Z., Zhang, F., Liu, H., &amp; Zhao, X. (2025). Advances and challenges in respiratory sound analysis using artificial intelligence. <em>Electronics</em>, 14(14), 2794.</p></li>
+<li><p>Tsai, C.-F., Hsieh, C.-Y., &amp; Hung, C.-H. (2023). Improving respiratory sound classification using Capsule Networks with MFCC representations. <em>Microsystem Technologies</em>.</p></li>
+<li><p>Choudhary, A., Karthik, C. R., Lakshmi, P. S., &amp; Kumar, S. (2023). LEAN: Light and Efficient Audio Classification Network. <em>arXiv preprint</em>. <a class="reference external" href="https://arxiv.org/abs/2305.12712">https://arxiv.org/abs/2305.12712</a></p></li>
+<li><p>Jung, J.-W., Heo, H.-S., Kim, J.-H., Shim, H.-J., &amp; Yu, H.-J. (2019). RawNet: Advanced end-to-end deep neural network using raw waveforms for text-independent speaker verification. <em>Interspeech 2019</em>. <a class="reference external" href="https://www.isca-archive.org/interspeech_2019/jung19b_interspeech.html">https://www.isca-archive.org/interspeech_2019/jung19b_interspeech.html</a></p></li>
+<li><p>Jung, J.-W., Kim, S.-B., Shim, H.-J., Kim, J.-H., &amp; Yu, H.-J. (2020). Improved RawNet with feature map scaling for text‑independent speaker verification using raw waveforms. <em>Interspeech 2020</em>. <a class="reference external" href="https://www.isca-archive.org/interspeech_2020/jung20c_interspeech.pdf">https://www.isca-archive.org/interspeech_2020/jung20c_interspeech.pdf</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./final-project-deliverables"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chronic-respiratory-diseases">1.1 Chronic Respiratory Diseases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventional-diagnostic-approaches-and-real-world-challenges">1.2 Conventional Diagnostic Approaches and Real-World Challenges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-studies-on-respiratory-sound-classification-and-research-gaps">1.3 Existing Studies on Respiratory Sound Classification and Research Gaps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-1-1-related-works-and-research-gaps-in-deeplearning-respiratory-sound-classification">Table 1.1. Related Works and Research Gaps in Deep‑Learning Respiratory Sound Classification</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#raw-waveformbased-deep-learning-architectures-for-respiratory-sound-analysis">1.4 Raw Waveform–Based Deep Learning Architectures for Respiratory Sound Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-of-the-study">Objectives of the Study</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Genheylou Felisilda
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

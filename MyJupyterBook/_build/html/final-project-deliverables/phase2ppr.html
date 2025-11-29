@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2 Methodology &#8212; Genny&#39;s Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'final-project-deliverables/phase2ppr';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Phase 2 - Narrative Report" href="week2NR.html" />
+    <link rel="prev" title="CNN Implementation" href="../lectures/lecture6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logomine.png" class="logo__image only-light" alt="Genny's Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logomine.png" class="logo__image only-dark" alt="Genny's Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Hi there!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures and Laboratories</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/lecture1.html">Lesson 1: Foundational Concept of Deep Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lecturetasks/lecturetask1.html">Lecture Task 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory1.html">Laboratory Task 1</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lectures/lecture2.html">Lesson 2: Understanding Deep Learnin</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory2.html">Laboratory Task 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory3.html">Laboratory Task 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory4.html">Laboratory Task 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../laboratories/Laboratory5.html">Laboratory Task 5</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture3.html">PyTorch Tensor Objects Attributes and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture4.html">Main Types of Deep Learning Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture5.html">Lesson 3: Applications of Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lectures/lecture6.html">CNN Implementation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">2 Methodology</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="week2NR.html">Phase 2 - Narrative Report</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Blog</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../laboratories/blog.html">Riding the Learning Curve: How a Single Number Decides Whether Your Neural Network Succeeds or Crashes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/gnhl-code/DeepLearning" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/gnhl-code/DeepLearning/issues/new?title=Issue%20on%20page%20%2Ffinal-project-deliverables/phase2ppr.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/final-project-deliverables/phase2ppr.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2 Methodology</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-1-pipeline-overview">Figure 2.1. Pipeline Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">2.1 Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">2.2 Exploratory Data Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#age-and-gender-across-respiratory-sound-patterns-and-clinical-diagnoses">2.2.1 Age and Gender across Respiratory Sound Patterns and Clinical Diagnoses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporal-structure">2.2.2 Temporal Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-2-1-recording-duration-by-respiratory-pattern">Table 2.1. Recording Duration by Respiratory Pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-2-temporal-waveform-and-rms-envelope-for-healthy">Figure 2.2. Temporal Waveform and RMS Envelope for Healthy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-3-temporal-waveform-and-rms-envelope-for-wheezes">Figure 2.3. Temporal Waveform and RMS Envelope for Wheezes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-5-temporal-waveform-and-rms-envelope-for-wheezes-crackles">Figure 2.5. Temporal Waveform and RMS Envelope for Wheezes &amp; Crackles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis">2.2.3 Spectral Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-5-box-plots-of-spectral-features-across-diagnoses">Figure 2.5. Box Plots of Spectral Features Across Diagnoses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">2.3 Data Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-rate">2.3.1 Sampling rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#window-segment-length">2.3.2 Window/Segment length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#augmentation">2.3.3 Augmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#padding">2.3.4 Padding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-balancing">2.3.5 Class balancing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction">2.3.6 Feature Extraction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="methodology">
+<h1>2 Methodology<a class="headerlink" href="#methodology" title="Link to this heading">#</a></h1>
+<p>This chapter provides an overview of the entire methodology used in the study as shown in Figure 2.1, including the data processing workflow, feature extraction procedures, and analytical techniques applied to ensure reliable and accurate results.</p>
+<p><img alt="pipeline" src="../_images/2.1.png" /></p>
+<section id="figure-2-1-pipeline-overview">
+<h2>Figure 2.1. Pipeline Overview<a class="headerlink" href="#figure-2-1-pipeline-overview" title="Link to this heading">#</a></h2>
+</section>
+<section id="data-collection">
+<h2>2.1 Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h2>
+<p>The dataset used in this study is the Respiratory Sound Database, originally acquired from the Biomedical Health Informatics Challenge hosted by Aristotle University of Thessaloniki (Rocha et al., 2019). This database was curated by research teams from Portugal and Greece and is publicly available at ICBHI 2017 Challenge website.</p>
+<p>The dataset comprises 920 annotated audio recordings of respiratory sounds from 126 patients, with clips ranging from 10 to 90 seconds in length. Each recording includes corresponding annotation files that describe the presence of respiratory anomalies such as wheezes, crackles, or both, as well as demographic and diagnostic information for each patient. The dataset offers a comprehensive repository of real-world respiratory sound data, suitable for training and evaluating machine learning models targeting respiratory disease detection.</p>
+</section>
+<section id="exploratory-data-analysis">
+<h2>2.2 Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Link to this heading">#</a></h2>
+<p>To characterize and distinguish respiratory sounds, this study performed a multi-faceted Exploratory Data Analysis (EDA) by integrating signal processing with demographic analysis. Temporal and spectral properties of each recording, including segment duration, raw waveform morphology, and RMS energy envelopes, were examined to differentiate normal vesicular breathing from adventitious patterns such as wheezes, crackles, and combined events. In parallel, associations between patient age, gender, auscultatory labels, and clinical diagnoses (e.g., COPD, URTI, and asthma) were explored to situate acoustic patterns within relevant disease phenotypes.</p>
+<section id="age-and-gender-across-respiratory-sound-patterns-and-clinical-diagnoses">
+<h3>2.2.1 Age and Gender across Respiratory Sound Patterns and Clinical Diagnoses<a class="headerlink" href="#age-and-gender-across-respiratory-sound-patterns-and-clinical-diagnoses" title="Link to this heading">#</a></h3>
+<p>To explore how patient demographics relate to both auscultatory findings and clinical diagnoses, age and gender were examined in relation to audio-based diagnostic categories (wheezes, crackles, and combined wheezes–crackles) and physician-assigned respiratory disease labels (e.g., chronic obstructive pulmonary disease, upper respiratory tract infection, asthma).</p>
+<p><em><strong>Age versus respiratory sound patterns.</strong></em> Age was treated as a continuous variable and related to lung sound labels using one-way analysis of variance (ANOVA). Because lung sound comprised four categories (normal, wheeze only, crackle only, both wheezes and crackles), ANOVA was the primary method for testing whether mean age differed significantly across these groups (Serdar et al., 2020). The correlation ratio η was computed alongside ANOVA to quantify how strongly the lung sound labels partitioned age variation, providing an effect-size measure that complements the F-test and facilitates interpretation of practical significance (Serdar et al., 2020).</p>
+<p>The one-way ANOVA comparing age across the four lung sound labels yielded a highly significant result (F(3,n) = 17.229, p&lt;0.001), indicating substantial differences in mean age between patients with different acoustic findings. The correlation ratio η=0.232 indicates a small to medium effect size (Cohen, 1988), meaning that while age differences are statistically significant, lung sound labels account for approximately 5.4% of the variance in age (η2=0.054). This modest effect, consistent with prior lung-sound cohort studies showing age-related differences in adventitious sound prevalence (Aviles-Solis et al., 2019), suggests that age is a relevant stratification variable but not the sole determinant of acoustic features. Notably, the stronger age–demographic diagnosis association indicates that clinical diagnoses incorporate age-related disease patterns more directly than do audio features alone, in line with data showing increasing COPD prevalence with age and contrasting age trends for asthma versus COPD (Safiri et al., 2022; De Marco et al., 2013).</p>
+<p><em><strong>Gender versus respiratory sound patterns.</strong></em> Gender was analysed as a categorical variable in relation to respiratory sound pattern using contingency tables. For each cross-tabulation of gender by respiratory sound pattern, the chi-square test of independence was used to evaluate whether the distribution of lung sound labels differed by gender. Cramér’s V was computed as the associated effect size, offering a scale-free index of association strength for nominal variables. Reporting both chi-square p-values and Cramér’s V aligns with recommendations to pair significance tests with effect-size metrics (McHugh, 2013).</p>
+<p>The chi-square test comparing gender distribution across respiratory sound patterns was statistically significant (χ2=25.522, p&lt;0.00), indicating that the distribution of adventitious sound types differed by sex. Cramér’s V = 0.167 indicates a weak to small effect size (De Oliveira Santana Amaral &amp; Line, 2021; IBM Cognos Analytics, n.d.), suggesting that while gender and respiratory sound patterns are statistically associated, the strength of this association is modest. Using conventional effect-size benchmarks, a Cramér’s V of 0.167 falls between 0.05 (small) and 0.15 – 0.25 (medium boundaries), meaning gender explains only approximately 2.8% of the association. This aligns with clinical observations that both sexes experience a range of respiratory sound types, though slight gender gradients in wheeze and crackle prevalence have been noted in epidemiological studies (Aviles-Solis et al., 2019).</p>
+<p><em><strong>Age versus clinical diagnosis.</strong></em> The relationship between age and clinical diagnosis was examined using the same framework as for age versus respiratory sound patterns. The relationship between age and clinician-assigned respiratory diagnoses was examined using one-way ANOVA. The results show a dramatically stronger association than observed for age versus audio diagnosis. The ANOVA yielded F= 418.525, p&lt;0.001, reflecting very large differences in mean age across the clinical diagnosis categories. The correlation ratio η=0.874 indicates a very large effect size, substantially exceeding Cohen’s threshold of 0.50 for large effects (Cohen, 1988), and indicating that diagnosis categories account for approximately 76.4% (η2=0.764) of the variance in age. This strong association is clinically meaningful: age distributions vary markedly between acute infections (e.g., URTI in younger patients) and chronic progressive diseases (e.g., COPD in older patients), a pattern well-established in respiratory epidemiology (Jin et al., 2021; World Health Organization, 2024).</p>
+<p><em><strong>Gender versus clinical diagnosis.</strong></em> This was analysed analogously to gender versus respiratory sound patterns. The chi-square test was statistically significant (χ2=31.036, p&lt;0.001), indicating that the distribution of clinical respiratory diagnoses differed by sex. Cramér’s V=0.184 indicates a weak to small effect size at the lower boundary of the medium range (De Oliveira Santana Amaral &amp; Line, 2021; IBM Cognos Analytics, n.d.), roughly 10% larger than the gender–respiratory sound patterns association. This suggests that gender and clinical diagnosis are more strongly related than gender and acoustic findings, with diagnosis groups accounting for approximately 3.4% (i.e., V2=0.034) of variance. Gender differences in respiratory disease prevalence, such as higher COPD rates in males and asthma often more severe in females, may contribute to this modest but detectable association, consistent with sex-specific respiratory morbidity patterns documented in population studies (Ntritsos et al., 2018; Zein &amp; Erzurum, 2015).</p>
+<p>Across all four pairs of variables, age emerged as a much stronger predictor of clinical diagnosis (η=0.874) than of respiratory sound patterns (η=0.232), demonstrating that clinical labels (COPD, URTI, asthma, etc.) incorporate age-related disease patterns more directly than do acoustic features alone. Conversely, gender showed weak associations with both audio-based and demographic diagnoses (Cramér’s V=0.167 and 0.184, respectively), suggesting that while sex may influence respiratory disease distribution, it is not a dominant driver of either acoustic or clinical diagnostic categories in this cohort. All four associations reached statistical significance (p&lt;0.001), but effect sizes clarify that only the age–clinical diagnosis pairing represents a large, clinically substantial effect. These findings highlight the importance of age stratification in respiratory sound analysis and underscore that demographic variables should be considered alongside acoustic features when modeling respiratory disease (Fernandes et al., 2022).</p>
+</section>
+<section id="temporal-structure">
+<h3>2.2.2 Temporal Structure<a class="headerlink" href="#temporal-structure" title="Link to this heading">#</a></h3>
+<p>The temporal structure analysis was performed on lung sound recordings categorized into four diagnostic groups: healthy, wheezes, crackles, and combined wheezes &amp; crackles. For each group, raw waveforms and their RMS energy envelopes were plotted to reveal variations in amplitude and event density over time. The RMS envelope is a robust feature for quantifying energy fluctuations characteristic of abnormal respiratory sounds, as supported by literature in machine learning-augmented lung sound recognition (Sabry et al., 2024; Sfayyih et al., 2023).</p>
+<p><em><strong>Recording duration.</strong></em> This showed that the mean segment length was relatively uniform across diagnostic groups, with healthy, wheeze, crackle, and combined wheeze–crackle recordings all clustered around 21–22 seconds. This approximate balance in duration suggests that temporal context is comparable between classes. The minimum and maximum durations varied more widely within each group, suggesting the presence of a small number of unusually long or short segments that may warrant truncation or padding in downstream modeling to standardize input length. This interpretation positions the duration analysis as a quality check: it confirms good overall balance while justifying standardization to handle outliers before training or evaluation.</p>
+</section>
+<section id="table-2-1-recording-duration-by-respiratory-pattern">
+<h3>Table 2.1. Recording Duration by Respiratory Pattern<a class="headerlink" href="#table-2-1-recording-duration-by-respiratory-pattern" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Respiratory Pattern</p></th>
+<th class="head"><p>Mean Duration (sec)</p></th>
+<th class="head"><p>Minimum Duration (sec)</p></th>
+<th class="head"><p>Maximum Duration (sec)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Healthy</p></td>
+<td><p>21.22</p></td>
+<td><p>7.85</p></td>
+<td><p>82.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>Crackles</p></td>
+<td><p>21.90</p></td>
+<td><p>14.57</p></td>
+<td><p>86.20</p></td>
+</tr>
+<tr class="row-even"><td><p>Wheezes</p></td>
+<td><p>20.82</p></td>
+<td><p>11.24</p></td>
+<td><p>73.35</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wheezes &amp; Crackles</p></td>
+<td><p>22.13</p></td>
+<td><p>9.58</p></td>
+<td><p>71.05</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em><strong>Healthy lung sound.</strong></em> The healthy waveform is characterized by low baseline amplitude and minimal transient activity, with the RMS envelope (red trace) closely following the mean signal value throughout the duration. The lack of pronounced peaks or high-energy events is consistent with the established morphology of normal vesicular breath sounds, as described in prior literature (Sabry et al., 2024; Sfayyih et al., 2023). The figure provides a visual reference for baseline lung sound energy and temporal regularity within healthy subjects.</p>
+<p><img alt="2.2" src="../_images/2.2.png" /></p>
+</section>
+<section id="figure-2-2-temporal-waveform-and-rms-envelope-for-healthy">
+<h3>Figure 2.2. Temporal Waveform and RMS Envelope for Healthy<a class="headerlink" href="#figure-2-2-temporal-waveform-and-rms-envelope-for-healthy" title="Link to this heading">#</a></h3>
+<p><em><strong>Wheezes.</strong></em> Displayed is the temporal pattern of a wheeze diagnosis, manifesting as periodic, banded oscillations in both the waveform and RMS envelope. The RMS trace highlights sustained periods of elevated energy, typical of musical, continuous wheezing described in diagnostic signal processing studies. The underlying waveform exhibits sinusoidal structure, further corroborating algorithmic and clinical findings on wheeze morphology (Sfayyih et al., 2023).</p>
+<p><img alt="2.3" src="../_images/2.3.png" /></p>
+</section>
+<section id="figure-2-3-temporal-waveform-and-rms-envelope-for-wheezes">
+<h3>Figure 2.3. Temporal Waveform and RMS Envelope for Wheezes<a class="headerlink" href="#figure-2-3-temporal-waveform-and-rms-envelope-for-wheezes" title="Link to this heading">#</a></h3>
+<p><em><strong>Crackles.</strong></em> This demonstrates the temporal waveform of lung sounds diagnosed with crackles. Short, explosive spikes dominate the recording, causing sudden increases in the RMS energy envelope against an otherwise low-amplitude baseline. Such discrete, high-energy temporal events are hallmark features of crackle sounds and mirror published patterns identified through both traditional auscultation and automated analysis (Sfayyih et al., 2023).</p>
+<p><img alt="2.4" src="../_images/2.4.png" />
+Figure 2.4. Temporal Waveform and RMS Envelope for Crackles</p>
+<p><em><strong>Wheezes and Crackles.</strong></em> This illustrates the mixed presentation of adventitious lung sounds, marked by both frequent, high-amplitude spikes and sustained energy elevation in the waveform. The RMS energy envelope is irregular and often elevated, reflecting the co-occurrence of continuous (wheeze-like) and discrete (crackle-like) sound events. This jagged, non-periodic profile corresponds with clinical reports of pathological lung acoustics in cases showing both wheezes and crackles (Sabry et al., 2024).</p>
+<p><img alt="2.5" src="../_images/2.5.png" /></p>
+</section>
+<section id="figure-2-5-temporal-waveform-and-rms-envelope-for-wheezes-crackles">
+<h3>Figure 2.5. Temporal Waveform and RMS Envelope for Wheezes &amp; Crackles<a class="headerlink" href="#figure-2-5-temporal-waveform-and-rms-envelope-for-wheezes-crackles" title="Link to this heading">#</a></h3>
+</section>
+<section id="spectral-analysis">
+<h3>2.2.3 Spectral Analysis<a class="headerlink" href="#spectral-analysis" title="Link to this heading">#</a></h3>
+<p>Spectral analysis was conducted to further characterize the lung sound recordings using four established spectral features: spectral centroid, spectral bandwidth, spectral roll-off, and spectral flux. The box plots visualize their distributions across diagnostic groups: Healthy, Wheezes, Crackles, and Wheezes &amp; Crackles.</p>
+<p><em><strong>Spectral centroid.</strong></em> This reflects the “center of mass” of the frequency spectrum, often perceived as the brightness of a sound. Box plots show Healthy recordings exhibit higher median spectral centroid values (352.48 Hz) compared to pathological classes, indicating a higher presence of high-frequency components in non-diseased states. Lower centroid values in disease categories, especially Wheezes &amp; Crackles (254.42 Hz), suggest a shift towards lower-frequency dominant sounds, likely due to airway obstruction and altered airflow mechanics (Abeyratne et al., 2013).</p>
+<p><em><strong>Spectral bandwidth and roll-off.</strong></em> Spectral bandwidth measures the width of the frequency band containing significant energy, while spectral roll-off represents the frequency below which a certain percentage (commonly 85-95%) of the total spectral energy is contained. Bandwidths are highest in Healthy (852.79 Hz) and Crackles (945.54 Hz) cases, with median values decreasing in Wheezes &amp; Crackles (717.77 Hz). This trend mirrors the spectral roll-off feature, where distributions are wider for Healthy (554.10 Hz) and Crackles (498.37 Hz), reflecting more distributed spectral energy, while lower roll-off in combined pathologies indicates concentration of energy at lower frequencies (Ponte et al., 2012).</p>
+<p><em><strong>Spectral flux.</strong></em> Spectral flux quantifies frame-to-frame spectral changes or temporal instability within a signal. Healthy (9801.56 Hz) recordings tend to show moderate spectral flux, indicating regular patterns in respiratory cycles. Both Crackles (12804.36 Hz) and combined Wheezes &amp; Crackles (11803.40 Hz) display slightly higher variability and presence of outliers, consistent with abrupt or intermittent acoustic events superimposed on the baseline. Wheezes (11420.61 Hz) show greater intra-group spectral spread, consistent with their characterization as high‑pitched, continuous adventitious sounds whose fundamental frequency typically ranges from about 100–1000 Hz with harmonics sometimes exceeding 1000–1600 Hz, leading to substantial variability in pitch across events (Rocha et al., 2021).</p>
+<p><img alt="2.6" src="../_images/2.6.png" /></p>
+</section>
+<section id="figure-2-5-box-plots-of-spectral-features-across-diagnoses">
+<h3>Figure 2.5. Box Plots of Spectral Features Across Diagnoses<a class="headerlink" href="#figure-2-5-box-plots-of-spectral-features-across-diagnoses" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="data-preprocessing">
+<h2>2.3 Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h2>
+<p>This section describes the procedures employed to prepare the respiratory sound recordings for deep learning modeling. Separate experimental setups were implemented to evaluate how different preprocessing and balancing techniques affect model performance. These steps ensure consistency, enhance generalizability, and preserve clinically relevant features for reliable classification of respiratory anomalies.</p>
+<p>The dataset exhibits a substantial class imbalance, most notably in the combined adventitious sounds category. This imbalance can introduce bias during model training, as classifiers may become disproportionately influenced by majority classes. To mitigate this risk, class balancing techniques were applied to ensure that all categories contribute more equitably to the learning process. This approach promotes fairer model behavior and aligns with established recommendations for managing imbalance in respiratory sound datasets (Chu et al., 2020).</p>
+<section id="sampling-rate">
+<h3>2.3.1 Sampling rate<a class="headerlink" href="#sampling-rate" title="Link to this heading">#</a></h3>
+<p>Resampling to 16 kHz preserves clinically relevant lung sound frequencies (wheezes up to ~2–2.5 kHz, crackles energy concentrated below ~2 kHz) while keeping data size practical for deep learning workflows.</p>
+<p>Recent reviews and method papers recommend sampling rates that cover the diagnostic frequency band and commonly use 16 kHz for spectrogram-based deep learning pipelines. Huang et al. (2023) review contemporary DL approaches and note common resampling practices for lung sounds. Rocha et al. (2020) describe the ICBHI dataset and frequency content of lung adventitious sounds, supporting the Nyquist-based choice.</p>
+</section>
+<section id="window-segment-length">
+<h3>2.3.2 Window/Segment length<a class="headerlink" href="#window-segment-length" title="Link to this heading">#</a></h3>
+<p><em><strong>6s.</strong></em> A 6-second window reliably captures at least one full adult respiratory cycle (typical cycle ≈ 3–5s), providing sufficient temporal context for continuous adventitious events (e.g., wheezes) while minimizing redundant data. This choice is supported by prior work: Balli and Kutlu (2021) found that classification accuracy for respiratory abnormalities peaks in window sizes between 2 and 10 s. Capturing a full cycle ensures that models can learn the temporal patterns of diagnostic events effectively (Nguyen et al., 2020).</p>
+<p><em><strong>20s.</strong></em> Based on exploratory data analysis, the lung-sound recordings in the dataset ranged from approximately 10 to 90s in length and the majority of it are more than 20s. To standardize inputs and provide uniform, longer contexts, we loop-padded all clips to 20s. This approach enables models that prefer longer fixed-length inputs and allows testing whether expanded temporal context combined with class balancing improves detection of minority classes. Loop-padded windows are commonly used to satisfy fixed-length input requirements in CNN-based lung-sound classification (Bae et al., 2023).</p>
+<p>Several modern lung-sound classification studies segment ICBHI recordings into multi-second windows (commonly 5–8 s) for CNN-based models because a few seconds are sufficient to capture diagnostic events, and longer windows offer diminishing returns when they simply repeat similar breathing cycles (Nguyen &amp; Pernkopf, 2022; Kim et al., 2021). Reviews and comparative studies on ICBHI processing emphasize segment-based analysis with segment lengths of ~5–10 s (Nguyen et al., 2020; Nguyen et al., 2022). Use of longer windows via loop padding is also seen in works that require fixed-length inputs; such studies highlight the trade-off between temporal context and redundancy (Bae et al., 2023).</p>
+</section>
+<section id="augmentation">
+<h3>2.3.3 Augmentation<a class="headerlink" href="#augmentation" title="Link to this heading">#</a></h3>
+<p>Probabilistic augmentation using time shift, low-level noise injection and gain variation and pitch shifting increases robustness to recording-phase variability, ambient noise, and breathing-rate variability, while preserving medically meaningful frequency cues.</p>
+<p><em><strong>Time shift.</strong></em> Shifts the waveform along the time axis without altering frequency content. Prevents over-reliance on signal onset timing; mimics variations in stethoscope placement rhythm.<br />
+<em><strong>Gaussian noise.</strong></em> Adds low-amplitude random noise. Simulates real-world ambient noise and improves robustness to hospital background sounds.<br />
+<em><strong>Gain variation.</strong></em> Random amplification/ volume reduction. Mimics different microphone sensitivities and patient–stethoscope coupling pressures.<br />
+<em><strong>Pitch shift.</strong></em> Changes the pitch (how high or low the sound is) of an audio signal without changing its duration (speed).</p>
+<p>Recent empirical works on ICBHI and related corpora show augmentation such as time shifting and additive noise improves generalization; Nguyen &amp; Pernkopf (2022) and later studies (co-tuning work, transfer-learning approaches) explicitly use log-Mel spectrograms and augmentations to mitigate small-sample issues and variability across recording conditions. The Huang (2023) review summarizes popular augmentation strategies for lung sounds and cautions against pitch alteration that would change diagnostically relevant spectral cues.</p>
+</section>
+<section id="padding">
+<h3>2.3.4 Padding<a class="headerlink" href="#padding" title="Link to this heading">#</a></h3>
+<p><em><strong>Tiling/loop padding.</strong></em> Loop padding extends shorter respiratory recordings by repeatedly appending the original waveform until the required duration is reached. This method preserves the physiological acoustic structure of the signal, ensuring that no silent artifacts distort its temporal or spectral features.<br />
+<em><strong>Slicing.</strong></em> Slicing in audio preprocessing means dividing a long audio signal into smaller, fixed-length segments. This is done to standardize input sizes for machine learning models and to capture localized acoustic events that may not span the entire recording, while also increasing the number of training samples to enhance model robustness and feature learning.</p>
+<p>Methodological discussions in respiratory sound literature and applied audio preprocessing guidelines recommend repeating or tiling short signals (or using overlapping windows) rather than inserting long silences when the model’s receptive field expects continuous data. Reviews and practical implementations of ICBHI-based pipelines, and several open-source preprocessing toolboxes, consistently use tiling or overlapping windows to avoid adding long silence segments that degrade feature quality (Huang, 2023).</p>
+</section>
+<section id="class-balancing">
+<h3>2.3.5 Class balancing<a class="headerlink" href="#class-balancing" title="Link to this heading">#</a></h3>
+<p>When data are highly imbalanced across diagnostic categories, undersampling to the minority class is a direct way to reduce bias and measure classifier sensitivity to underrepresented classes. Combining balancing with augmentation increases intra-class variability without inflating majority-class dominance.</p>
+<p>In this study, the original dataset shows substantial imbalance, which can cause the model to favor majority classes while overlooking minority-class patterns. To address this, we employed several sampling strategies across experiments.</p>
+<p><em><strong>Original Sampling.</strong></em> Uses the dataset in its natural form, keeping the original class distribution intact. This provides a baseline for evaluating model performance under real-world imbalances.<br />
+<em><strong>Undersampling.</strong></em> Reduces the number of samples in majority classes to match the size of the minority class. This prevents the model from being biased toward dominant classes but reduces the total amount of training data.<br />
+<em><strong>Oversampling.</strong></em> Increases the number of samples in minority classes by augmentation. This improves class balance without discarding majority-class data, though it may increase the risk of overfitting.<br />
+<em><strong>Hybrid “Anchor” Balancing.</strong></em> We will implement a “mean balancing” strategy where we set a target count based on the average class size. The majority class is undersampled to this target, while minority classes are oversampled using diverse augmentations to reach it. This strikes a balance, avoiding the data loss of undersampling and the excessive redundancy of full oversampling.</p>
+<p>Several ICBHI-focused studies adopt class rebalancing strategies (undersampling, oversampling, or class-weighted loss) to address severe imbalance, and comparative work shows such interventions are necessary to improve detection of rarer classes (Nguyen et al., 2022; performance evaluations and recent reviews). Use of undersampling to the minority class is an accepted experimental approach in comparative studies that prioritize balanced evaluation.</p>
+</section>
+<section id="feature-extraction">
+<h3>2.3.6 Feature Extraction<a class="headerlink" href="#feature-extraction" title="Link to this heading">#</a></h3>
+<p>Feature extraction followed augmentation using a dual-path strategy combining raw waveform encoding and log-Mel spectrograms. This design retains both time-domain morphology and perceptually relevant time–frequency structure of lung sounds.</p>
+<p><em><strong>log-Mel spectrogram.</strong></em> Converts each waveform into a 2-D time–frequency map using n_mels ≈ 128 and fmax ≈ 8 kHz, followed by logarithmic scaling. Log-Mel spectrograms are widely regarded as the most effective representation for deep learning–based respiratory sound analysis because they emphasize the lower-frequency regions where wheezes and crackles predominantly occur. Their superiority has been repeatedly validated across recent ICBHI-focused works, including those by Huang et al. (2023), T. Nguyen et al. (2020), Rocha et al. (2021), Tasar et al. (2020), and Kim et al. (2019), all of which report improved classification accuracy using Mel-spectrogram-based CNN pipelines.</p>
+<p><em><strong>MFCCs (Mel-Frequency Cepstral Coefficients).</strong></em> Are audio features that encode the spectral envelope of a sound on a perceptual scale, and they are used in lung sound classification to capture the characteristic frequency patterns of breath sounds. Studies have shown that MFCCs effectively “imitate the human ear” when analyzing recorded lung sounds (Arar &amp; Sedef, 2023) and are commonly used as inputs to machine-learning models for respiratory sound analysis (Topaloğlu et al., 2025; Sahu et al., 2025). These coefficients provide a compact, noise-robust representation that enhances classification of normal and abnormal lung sounds (Kim et al., 2025).</p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Abeyratne, U. R., Swarnkar, V., Setyati, A., &amp; Triasih, R. (2013). Cough sound analysis can rapidly diagnose childhood pneumonia. Annals of Biomedical Engineering, 41(11), 2448–2462. https://doi.org/10.1007/s10439-013-0836-0</p></li>
+<li><p>Arar, M. E.,  &amp; SEDEF, H., (2023). An efficient lung sound classification technique based on MFCC and HDMR. Signal, Image and Video Processing, vol.17, no.8, 4385-4394.</p></li>
+<li><p>Aviles-Solis, J. C., Jácome, C., Davidsen, A., Einarsen, R., Vanbelle, S., Pasterkamp, H., &amp; Melbye, H. (2019). Prevalence and clinical associations of wheezes and crackles in the general population: the Tromsø study. BMC Pulmonary Medicine, 19(1), 173. https://doi.org/10.1186/s12890-019-0928-1</p></li>
+<li><p>Bae, S., Lee, J., &amp; Park, H. (2023). Deep learning approaches for respiratory sound analysis using ICBHI dataset. Interspeech 2023. Retrieved from https://www.isca-archive.org/interspeech_2023/bae23b_interspeech.pdf</p></li>
+<li><p>Balli, O., &amp; Kutlu, Y. (2021). Optimizing window lengths for lung sound classification: A comparative study. arXiv. https://arxiv.org/abs/2101.08495</p></li>
+<li><p>Chu, W., Pham, T., &amp; Abeyratne, U. R. (2020). Deep learning for respiratory sound classification in imbalanced datasets: Effectiveness of data balancing and augmentation strategies. IEEE Access, 8, 162576–162588. https://doi.org/10.1109/ACCESS.2020.3021534</p></li>
+<li><p>De Oliveira Santana Amaral, E., &amp; Line, S. R. P. (2021). Current use of effect size or confidence interval analyses in clinical and biomedical research. Scientometrics, 126(11), 9133–9145. https://doi.org/10.1007/s11192-021-04150-3</p></li>
+<li><p>Fernandes, T., Rocha, B. M., Pessoa, D., De Carvalho, P., &amp; Paiva, R. P. (2022). Classification of adventitious Respiratory sound Events: A Stratified analysis. 2022 IEEE-EMBS International Conference on Biomedical and Health Informatics (BHI). https://doi.org/10.1109/bhi56158.2022.9926841</p></li>
+<li><p>Huang, D., Huang, J., Qiao, K., Zhong, N., Lu, H., &amp; Wang, W. (2023). Deep learning-based lung sound analysis for intelligent stethoscope. Military Medical Research, 10(1), 44. https://doi.org/10.1186/s40779-023-00479-3</p></li>
+<li><p>IBM Cognos Analytics. (n.d.). https://www.ibm.com/docs/en/cognos-analytics/12.0.x?topic=terms-cramrs-v</p></li>
+<li><p>International Conference on Biomedical and Health Informatics. (2017). ICBHI respiratory sound database challenge. https://bhichallenge.med.auth.gr</p></li>
+<li><p>Jin, X., Ren, J., Li, R., Gao, Y., Zhang, H., Li, J., Zhang, J., Wang, X., &amp; Wang, G. (2021). Global burden of upper respiratory infections in 204 countries and territories, from 1990 to 2019. EClinicalMedicine, 37, 100986. https://doi.org/10.1016/j.eclinm.2021.100986</p></li>
+<li><p>Kim, Y., Hyon, Y., Jung, S. S., Lee, S., Yoo, G., Chung, C., &amp; Ha, T. (2021). Respiratory sound classification for crackles, wheezes, and rhonchi in the clinical field using deep learning. Scientific Reports, 11(1), 17186. https://doi.org/10.1038/s41598-021-96724-7</p></li>
+<li><p>Kim, Y., Kim, K. B., Leem, A. Y., Kim, K., &amp; Lee, S. H. (2025). Enhanced Respiratory Sound Classification Using Deep Learning and Multi-Channel Auscultation. Journal of Clinical Medicine, 14(15), 5437. https://doi.org/10.3390/jcm14155437</p></li>
+<li><p>McHugh, M. L. (2013). The Chi-square test of independence. Biochemia Medica, 23(2), 143–149. https://doi.org/10.11613/bm.2013.018</p></li>
+<li><p>Nguyen, T., &amp; Pernkopf, F. (2022). Lung sound classification using co-tuning and stochastic normalization. arXiv.org. https://arxiv.org/abs/2108.01991v1</p></li>
+<li><p>Ntritsos, G., Franek, J., Belbasis, L., Christou, M. A., Markozannes, G., Altman, P., Fogel, R., Sayre, T., Ntzani, E. E., &amp; Evangelou, E. (2018). Gender-specific estimates of COPD prevalence: a systematic review and meta-analysis. International Journal of COPD, 13, 1507–1514. https://doi.org/10.2147/copd.s146390</p></li>
+<li><p>Ponte, D. F., Moraes, R., Hizume, D. C., &amp; Alencar, A. M. (2012). Characterization of crackles from patients with fibrosis, heart failure and pneumonia. Medical Engineering &amp; Physics, 35(4), 448–456. https://doi.org/10.1016/j.medengphy.2012.06.009</p></li>
+<li><p>Rocha, B. M., Filos, D., Mendes, L., Serbes, G., Ulukaya, S., Kahya, Y. P., Jakovljevic, N., Turukalo, T. L., Vogiatzis, I. M., Perantoni, E., Kaimakamis, E., Natsiavas, P., Oliveira, A., Jácome, C., Marques, A., Maglaveras, N., Paiva, R. P., Chouvarda, I., &amp; De Carvalho, P. (2019). An open access database for the evaluation of respiratory sound classification algorithms. Physiological Measurement, 40(3), 035001. https://doi.org/10.1088/1361-6579/ab03ea</p></li>
+<li><p>Rocha, B. M., Pessoa, D., Marques, A., Carvalho, P., &amp; Paiva, R. P. (2020). Automatic classification of adventitious - respiratory sounds: A (Un)Solved problem? Sensors, 21(1), 57. https://doi.org/10.3390/s21010057</p></li>
+<li><p>Sabry, A. H., Bashi, O. I. D., Ali, N. N., &amp; Kubaisi, Y. M. A. (2024). Lung disease recognition methods using audio-based analysis with machine learning. Heliyon, 10(4), e26218. https://doi.org/10.1016/j.heliyon.2024.e26218</p></li>
+<li><p>Safiri, S., Carson-Chahhoud, K., Noori, M., Nejadghaderi, S. A., Sullman, M. J. M., Heris, J. A., Ansarin, K., Mansournia, M. A., Collins, G. S., Kolahi, A., &amp; Kaufman, J. S. (2022). Burden of chronic obstructive pulmonary disease and its attributable risk factors in 204 countries and territories, 1990-2019: results from the Global Burden of Disease Study 2019. BMJ, 378, e069679. https://doi.org/10.1136/bmj-2021-069679</p></li>
+<li><p>Sahu, P., Kumar, S., &amp; Behera, A. K. (2025). DeepFusion: early diagnosis of COPD, asthma, and pneumonia using lung sound analysis with a multimodal BiGRU network. Computer Methods in Biomechanics and Biomedical Engineering, 1–14. Advance online publication. https://doi.org/10.1080/10255842.2025.2511228</p></li>
+<li><p>Serdar, C. C., Cihan, M., Yücel, D., &amp; Serdar, M. A. (2020). Sample size, power and effect size revisited: simplified and practical approaches in pre-clinical, clinical and laboratory studies. Biochemia Medica, 31(1), 27–53. https://doi.org/10.11613/bm.2021.010502</p></li>
+<li><p>Sfayyih, A. H., Sabry, A. H., Jameel, S. M., Sulaiman, N., Raafat, S. M., Humaidi, A. J., &amp; Kubaiaisi, Y. M. A. (2023). Acoustic-Based Deep Learning Architectures for Lung Disease Diagnosis: A Comprehensive Overview. Diagnostics, 13(10), 1748. https://doi.org/10.3390/diagnostics13101748</p></li>
+<li><p>Sfayyih, A. H., Sulaiman, N., &amp; Sabry, A. H. (2023). A review on lung disease recognition by acoustic signal analysis with deep learning networks. Journal of Big Data, 10(1), 101. https://doi.org/10.1186/s40537-023-00762-z</p></li>
+<li><p>T. Nguyen and F. Pernkopf. (2020). Lung Sound Classification Using Snapshot Ensemble of Convolutional Neural Networks. Engineering in Medicine &amp; Biology Society (EMBC), 10.1109/EMBC44109.2020.9176076.</p></li>
+<li><p>Topaloglu, I., Ozduygu, G., Atasoy, C., Batıhan, G., Serce, D., Inanc, G., Güçsav, M. O., Yıldız, A. M., Tuncer, T., Dogan, S., &amp; Barua, P. D. (2025). Machine Learning-Driven Lung Sound Analysis: Novel Methodology for Asthma Diagnosis. Advances in Respiratory Medicine, 93(5), 32. https://doi.org/10.3390/arm93050032</p></li>
+<li><p>Wang, Z., &amp; Sun, Z. (2024). Performance evaluation of lung sounds classification using deep learning under variable parameters. EURASIP Journal on Advances in Signal Processing, 2024(1). https://doi.org/10.1186/s13634-024-01148-w</p></li>
+<li><p>World Health Organization. (2024, November 6). Chronic obstructive pulmonary disease (COPD). https://www.who.int/news-room/fact-sheets/detail/chronic-obstructive-pulmonary-disease-(copd)</p></li>
+<li><p>Zein, J. G., &amp; Erzurum, S. C. (2015). Asthma is Different in Women. Current Allergy and Asthma Reports, 15(6), 28. https://doi.org/10.1007/s11882-015-0528-y</p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./final-project-deliverables"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lectures/lecture6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">CNN Implementation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week2NR.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Phase 2 - Narrative Report</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-1-pipeline-overview">Figure 2.1. Pipeline Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">2.1 Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">2.2 Exploratory Data Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#age-and-gender-across-respiratory-sound-patterns-and-clinical-diagnoses">2.2.1 Age and Gender across Respiratory Sound Patterns and Clinical Diagnoses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporal-structure">2.2.2 Temporal Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-2-1-recording-duration-by-respiratory-pattern">Table 2.1. Recording Duration by Respiratory Pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-2-temporal-waveform-and-rms-envelope-for-healthy">Figure 2.2. Temporal Waveform and RMS Envelope for Healthy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-3-temporal-waveform-and-rms-envelope-for-wheezes">Figure 2.3. Temporal Waveform and RMS Envelope for Wheezes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-5-temporal-waveform-and-rms-envelope-for-wheezes-crackles">Figure 2.5. Temporal Waveform and RMS Envelope for Wheezes &amp; Crackles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-analysis">2.2.3 Spectral Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-2-5-box-plots-of-spectral-features-across-diagnoses">Figure 2.5. Box Plots of Spectral Features Across Diagnoses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">2.3 Data Preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-rate">2.3.1 Sampling rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#window-segment-length">2.3.2 Window/Segment length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#augmentation">2.3.3 Augmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#padding">2.3.4 Padding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-balancing">2.3.5 Class balancing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction">2.3.6 Feature Extraction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Genheylou Felisilda
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

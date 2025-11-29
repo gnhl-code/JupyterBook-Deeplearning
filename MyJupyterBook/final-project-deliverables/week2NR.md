@@ -1,0 +1,14 @@
+# Phase 2 - Narrative Report
+
+Nov 17–23 - Narrative Report 
+
+For this week, our group met to outline the full workflow of our study. We reviewed our initial plan—to compare the bio-inspired TCN-SNN with the standard TCN using MFCCs and Mel-Spectrograms—and agreed that these comparisons will only be meaningful if the data is processed correctly. Because of this, we focused this phase on performing a detailed Exploratory Data Analysis (EDA) and finalizing the preprocessing steps needed for our experimental datasets. In addition to our online discussions, we also met face-to-face on November 21 to finalize these decisions and ensure that everyone had a clear understanding of the next steps. 
+
+![week2](images/week2.png)
+
+During our EDA, we tackle again about the dataset distributions. We observed a strong relationship between patient age and clinical diagnosis, confirming that age plays a major role in respiratory conditions. When visualizing the audio, we found that crackles appear as short, sharp spikes while wheezes show repeating, wave-like oscillations. We also noted that healthy sounds typically have a higher spectral centroid of around 352 Hz, making them “brighter,” while abnormal sounds are lower at around 254 Hz. Recording lengths were also found to range from 10 to 90 seconds, with most lasting about 20 seconds. 
+
+Based on these insights, we finalized key preprocessing decisions. We agreed to standardize all audio to a 16 kHz sampling rate to capture relevant frequency information without unnecessary data size. We also decided to create two dataset versions: a 20-second dataset with loop padding, which reflects the natural duration of most recordings, and a 6-second dataset obtained through slicing, since prior research shows this duration can capture a full breathing cycle. For feature extraction, we will directly compare Log-Mel Spectrograms and MFCCs to examine how each interacts with both the TCN and TCN-SNN models. 
+
+A major part of our November 21 meeting focused on solving the dataset’s class imbalance. We developed five dataset variants to understand how different balancing strategies affect model performance. These include using the original unbalanced dataset as a baseline, creating a clean undersampled version, generating an undersampled-plus-augmentation version to increase diversity, producing an oversampled version to improve minority-class representation, and applying a hybrid “anchor” balancing approach that uses a target class size based on the average class count. 
+This hybrid method undersamples the majority class and oversamples minority classes with various augmentations to avoid the drawbacks of extreme undersampling or oversampling. We are still testing specific augmentation techniques, such as time-shifting and noise injection, to determine which methods generate useful synthetic samples without changing important diagnostic features of lung sounds.
