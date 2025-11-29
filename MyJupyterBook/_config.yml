@@ -20,6 +20,14 @@ sphinx:
     - sphinx.ext.autodoc
     - sphinx.ext.napoleon
     - sphinx.ext.viewcode
+  
+  config:
+    # Tell Jupyter Book where the static folder is
+    html_static_path: ["_static"]
+        
+    # List the CSS files you want to load
+    html_css_files: ["custom.css"]
+
 
 # HTML theme
 html_theme: "sphinx_book_theme"
@@ -57,3 +65,4 @@ html:
     TeX:
       equationNumbers:
         autoNumber: "AMS"
+
