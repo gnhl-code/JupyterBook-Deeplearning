@@ -27,7 +27,6 @@ parts:
       - file: final-project-deliverables/phase1ppr
         sections:
           - file: final-project-deliverables/week1NR
-    chapters:
       - file: final-project-deliverables/phase2ppr
         sections:
           - file: final-project-deliverables/week2NR
