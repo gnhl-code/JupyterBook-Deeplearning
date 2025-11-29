@@ -148,14 +148,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/bee-eyebrows.gif" class="logo__image only-light" alt="Genny's Jupyter Book - Home"/>
-    <script>document.write(`<img src="../_static/bee-eyebrows.gif" class="logo__image only-dark" alt="Genny's Jupyter Book - Home"/>`);</script>
   
+    <p class="title logo__title">Genny's Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -405,10 +399,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="week-1">
 <h1>Week 1<a class="headerlink" href="#week-1" title="Link to this heading">#</a></h1>
 <p>Nov 10–16 - Narrative Report</p>
+<p>This week was an important step for our group because we finalized the direction of our research. Our study focuses on classifying lung sounds, specifically identifying healthy breaths and abnormal sounds such as crackles and wheezes. Since lung sounds change over time, we want to build a deep learning system that can handle these time-based patterns. Before choosing our methods, we first checked the quality of our data. We reviewed the ICBHI 2017 Respiratory Sound Database, which contains 6,898 respiratory cycles labeled as normal, crackle, wheeze, or both. We confirmed that the labels were complete, but we also noticed that the dataset is noisy and has fewer abnormal samples than healthy ones. This helped us understand the challenges we need to address in our study.</p>
+<p>During our November 15, 2025 meeting, we discussed how to write the background of our study and what our objectives should be. Each member shared ideas, and we also talked about the common problems with traditional auscultation, such as how subtle lung sounds are difficult to detect and how interpretations can differ between practitioners. These issues helped strengthen our rationale for studying automated lung sound classification, especially because unstructured medical data like audio is still not widely explored.</p>
 <p><img alt="week1" src="../_images/week1.png" /></p>
-<p>As of November 15, 2025, we had a gmeet to finalize our background of the study and our objectives. Before that, each of us shared our own ideas for what the objectives could be. Our dataset is focused on pulmonary audios, specifically the ICBHI 2017 Respiratory Sound Database. It has 6,898 respiratory cycles labeled as normal, crackle, wheeze, or both crackle and wheeze.</p>
-<p>Our study is centered on unstructured datasets, like sound, which are still not widely explored in medicine. We made sure the dataset was reliable before committing to this topic and also built a clear rationale for why this problem is worth looking into. My role in the team was to explore and identify the common challenges in traditional auscultation, such as how subtle lung sounds can be hard to detect, how human error can affect interpretation, and how results can vary between different practitioners.</p>
-<p>As a team, we talked about how to handle the dataset and set our main goals, which include improving feature extraction, comparing different models, and experimenting with hyperparameters. Right now, we’re a bit stuck deciding which models to experiment with first, especially since time for running tests is limited.</p>
+<p>The main task for this phase was to decide what we will test in our experiments. We focused on three parts of the pipeline: the input features, the model architecture, and the hyperparameters. For the input, we agreed to compare Mel-Spectrograms and MFCCs to see which representation works better for lung sound signals. For the model, we will compare a standard TCN with a spiking TCN to investigate whether the spiking mechanism can reduce noise more effectively. For the settings, we will experiment with different hyperparameters, such as kernel size and time steps, because these can affect how the model processes sound. We have not chosen the final values yet, so tuning these settings will be a major part of our work.</p>
+<p>By combining these decisions, we finalized our scope: we will compare MFCC vs. Mel-Spectrograms, Standard TCN vs. Spiking TCN, and test different hyperparameter settings at the same time. This plan allows us to understand not only which model performs better, but also why it performs that way under different conditions. Overall, this phase helped us move from a broad idea to a clear and organized plan.</p>
 </section>
 
     <script type="text/x-thebe-config">
