@@ -2,12 +2,13 @@
 .bd-sidebar {
     background-color: #ff751f; /* Light grey background */
     border-right: 1px solid #ddd;
+    width: fit-content;
 }
 
 /* 2. The Right Sidebar (Page Table of Contents) */
 .bd-toc {
-    font-size: 0.9em; /* Make it slightly smaller */
+    font-size: 0.9em; /* Make it slightly bigger*/
 }
 .bd-toc .toc-item a {
-    color: #333; /* Darker text color for better readability */
+    color: #ffffff; /* Darker text color for better readability */
 }
