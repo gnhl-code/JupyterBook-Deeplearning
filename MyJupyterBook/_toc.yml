@@ -33,9 +33,11 @@ parts:
       - file: final-project-deliverables/phase3ppr
         sections:
           - file: final-project-deliverables/week3NR
-      - file: final-project-deliverables/[manuscript]DL-FINAL-PROJECT-PULMOSCOPE.pdf
-        sections:
           - file: final-project-deliverables/week4NR
+      - file: final-project-deliverables/pulmoscope-page
+        sections:
+          - file: final-project-deliverables/EDA-PulmoScope
+          - file: final-project-deliverables/PulmoScope
 
 
   - caption: "Blog"

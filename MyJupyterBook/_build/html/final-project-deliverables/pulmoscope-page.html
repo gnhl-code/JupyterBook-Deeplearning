@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3 Implementation &#8212; Genny&#39;s Jupyter Book</title>
+    <title>Project PulmoScope &#8212; Genny&#39;s Jupyter Book</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'final-project-deliverables/phase3ppr';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'final-project-deliverables/pulmoscope-page';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Phase 3 - Narrative Report" href="week3NR.html" />
-    <link rel="prev" title="Phase 2 - Narrative Report" href="week2NR.html" />
+    <link rel="next" title="Exploratory Data Analysis" href="EDA-PulmoScope.html" />
+    <link rel="prev" title="Phase 4 - Narrative Report" href="week4NR.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -208,12 +208,12 @@
 <li class="toctree-l2"><a class="reference internal" href="week2NR.html">Phase 2 - Narrative Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3 Implementation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="phase3ppr.html">3 Implementation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="week3NR.html">Phase 3 - Narrative Report</a></li>
 <li class="toctree-l2"><a class="reference internal" href="week4NR.html">Phase 4 - Narrative Report</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="pulmoscope-page.html">Project PulmoScope</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Project PulmoScope</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="EDA-PulmoScope.html"><strong>Exploratory Data Analysis</strong></a></li>
 
 
@@ -294,7 +294,7 @@
       
       
       
-      <li><a href="https://github.com/gnhl-code/DeepLearning/issues/new?title=Issue%20on%20page%20%2Ffinal-project-deliverables/phase3ppr.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/gnhl-code/DeepLearning/issues/new?title=Issue%20on%20page%20%2Ffinal-project-deliverables/pulmoscope-page.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +324,7 @@
       
       
       
-      <li><a href="../_sources/final-project-deliverables/phase3ppr.md" target="_blank"
+      <li><a href="../_sources/final-project-deliverables/pulmoscope-page.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +395,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -406,11 +408,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>3 Implementation</h1>
+    <h1>Project PulmoScope</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract"><strong>Abstract</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -420,14 +430,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="implementation">
-<h1>3 Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h1>
-<p>After completing Phase 2, where we finalized our preprocessing pipeline—including standardizing input durations (6 seconds vs. 20 seconds) and establishing strategies for class balancing—our focus shifted to Phase 3, which involved developing the model architectures. In earlier tests, we found that the Temporal Convolutional Network (TCN) outperformed LSTM-based models for sequential data, showing better gradient stability and faster computation. Building on this, our main task was to implement the planned comparison between the standard TCN and the spiking TCN-SNN using PyTorch.</p>
-<p>We began by building the standard TCN as a baseline. To respect the sequential nature of audio, we implemented causal convolutions that allow the model to use only past and current information, simulating real-time lung sound analysis. We also applied dilated convolutions so the network could capture both short-duration crackles and long-duration wheezes without requiring computationally heavy recurrent structures. The network consists of three convolutional blocks with channel sizes of 32, 64, and 128, which progressively extract higher-level features from MFCCs or Mel-Spectrograms.</p>
-<p>Next, we developed the spiking TCN (TCN-SNN). Unlike the standard TCN, this model communicates via discrete spikes rather than continuous outputs. To ensure a fair comparison, we kept the TCN backbone identical in both models so that any performance differences would be due to the spiking mechanism itself. We used Leaky Integrate-and-Fire (LIF) neurons with a short simulation window of six time steps to reduce latency. This design allows the model to perform efficiently while mimicking key aspects of biological spiking behavior. Surrogate gradients were applied to enable standard backpropagation for training, bridging the gap between spiking behavior and gradient-based optimization.</p>
-<p>With both architectures defined, we standardized the training process using the Adam optimizer with a learning rate of 1e-3 and Cross-Entropy Loss. We also included evaluation metrics such as accuracy, confusion matrices, and ROC curves to track not only whether the models learned, but how they learned. This is particularly important for testing whether the TCN-SNN handles background noise more effectively, potentially resulting in fewer false positives.</p>
-<p>We then performed initial experiments to identify the best input configuration. When using Mel-Spectrograms, both models struggled, showing accuracy close to random guesses even after extensive tuning. The high dimensionality of Mel-Spectrograms likely overwhelmed the models with background noise. In contrast, MFCCs produced a dramatic improvement, achieving a peak accuracy of 93%, as they compress spectral information and reduce interference from non-essential background sounds. We also compared input durations and found that 20-second segments performed better than 6-second slices. Longer segments capture multiple breathing cycles, giving the TCN sufficient context to model long-term dependencies, while shorter segments often lacked enough information for accurate classification.</p>
-<p>Based on these results, we chose to proceed with MFCC features and 20-second inputs. However, we observed some overfitting in later training epochs, so the next phase will focus on systematic hyperparameter tuning, including adjusting the number of layers, kernel sizes, and regularization settings. These adjustments will be applied to both the standard TCN and the TCN-SNN to ensure a fair and rigorous comparison between the two architectures.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="project-pulmoscope">
+<h1>Project PulmoScope<a class="headerlink" href="#project-pulmoscope" title="Link to this heading">#</a></h1>
+<p><strong>A Comparative Study of Hybrid TCN-SNN and Temporal Deep Learning Models for Multi-Class Respiratory Disease Detection from Lung Auscultation Sounds</strong></p>
+<p><em>Authors: Genheylou Felisilda, Nicole Menorias, Kobe Marco Olaguir, and Joanna Reyda Santos</em></p>
+<section id="abstract">
+<h2><strong>Abstract</strong><a class="headerlink" href="#abstract" title="Link to this heading">#</a></h2>
+<p>Chronic respiratory diseases such as chronic obstructive pulmonary disease (COPD) and pneumonia remain leading causes of morbidity and mortality worldwide, particularly in resource-limited settings where access to advanced diagnostic tools is restricted. Conventional lung auscultation, while widely used, suffers from low sensitivity, high interobserver variability, and difficulty in differentiating diseases with overlapping acoustic signatures. This study presents PulmoScope, a disease-centered deep learning framework for multi-class respiratory disease classification using lung auscultation sounds.</p>
+<p>Using the ICBHI 2017 Respiratory Sound Database, lung sound recordings were standardized through rigorous preprocessing, including resampling, bandpass filtering, fixed-duration segmentation, loop-padding, and normalization. A hybrid feature representation combining high-resolution Mel-spectrograms and MFCCs was employed to capture both spectral and cepstral characteristics of respiratory acoustics. To address severe class imbalance, a downsample-then-augment strategy with frequency masking was applied.</p>
+<p>The study systematically compares multiple temporal deep learning architectures, including a hybrid Temporal Convolutional Network–Spiking Neural Network (TCN-SNN), a pure TCN, Long Short-Term Memory (LSTM), and a Vanilla RNN, under identical training conditions. Performance was evaluated using accuracy, F1-score, precision, recall, ROC–AUC, and confusion matrix analysis on a held-out test set. Model interpretability was further examined using Grad-CAM to visualize time–frequency regions influencing classification decisions.</p>
+<p>Results demonstrate that advanced temporal models, particularly the hybrid TCN-SNN, outperform traditional recurrent baselines in disease-level differentiation, reducing misclassification between COPD and pneumonia. These findings highlight the potential of deep learning–assisted auscultation as a robust clinical decision-support tool for improving early detection and reducing misdiagnosis of respiratory diseases in real-world and resource-constrained healthcare settings.</p>
+<p>for more project information heres the github-link: https://github.com/LadyJo02/PulmoScope</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -463,20 +477,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="week2NR.html"
+       href="week4NR.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Phase 2 - Narrative Report</p>
+        <p class="prev-next-title">Phase 4 - Narrative Report</p>
       </div>
     </a>
     <a class="right-next"
-       href="week3NR.html"
+       href="EDA-PulmoScope.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Phase 3 - Narrative Report</p>
+        <p class="prev-next-title"><strong>Exploratory Data Analysis</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -486,6 +500,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract"><strong>Abstract</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
