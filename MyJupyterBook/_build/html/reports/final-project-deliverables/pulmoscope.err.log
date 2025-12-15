@@ -1,0 +1,133 @@
+Traceback (most recent call last):
+  File "C:\Users\Genhe\AppData\Roaming\Python\Python313\site-packages\jupyter_core\utils\__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Genhe\AppData\Local\Programs\Python\Python313\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Genhe\AppData\Local\Programs\Python\Python313\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Genhe\AppData\Roaming\Python\Python313\site-packages\jupyter_core\utils\__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Genhe\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\Genhe\AppData\Local\Programs\Python\Python313\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "C:\Users\Genhe\AppData\Local\Programs\Python\Python313\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\Genhe\AppData\Local\Programs\Python\Python313\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import sys
+sys.setrecursionlimit(10000)
+
+import os, glob, numpy as np, pandas as pd, librosa, torch, copy, time
+import torch.nn as nn
+from torch.utils.data import Dataset, DataLoader
+import pytorch_lightning as pl
+from pytorch_lightning.callbacks import EarlyStopping, Callback, ModelCheckpoint, TQDMProgressBar
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc
+from sklearn.preprocessing import label_binarize
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import signal
+from spikingjelly.clock_driven import neuron, surrogate, functional
+from tqdm.auto import tqdm
+import kagglehub
+import random
+import itertools
+import warnings
+import cv2
+
+# Try importing torchinfo for architecture visualization
+try:
+    from torchinfo import summary
+    HAS_TORCHINFO = True
+except ImportError:
+    HAS_TORCHINFO = False
+
+warnings.filterwarnings("ignore")
+
+# ================= CONFIGURATION =================
+SEED = 42
+pl.seed_everything(SEED)
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+
+DEFAULT_CONFIG = {
+    "SAMPLE_RATE": 16000, 
+    "DURATION": 5, 
+    "N_MELS": 224,          # High-Res Mel Spectrogram
+    "N_MFCC": 40,           # Stacked MFCCs
+    "N_FFT": 2048, 
+    "HOP_LENGTH": 512,
+    "BATCH_SIZE": 16, 
+    "EPOCHS": 30, 
+    "LR": 1e-3, 
+    "WEIGHT_DECAY": 1e-4,
+    "HIDDEN_DIM": 192, 
+    "DROPOUT": 0.2, 
+    "GRAD_CLIP": 1.0, 
+    "PATIENCE": 10,
+    "OPTIMIZER": "AdamW", 
+    "LABEL_SMOOTHING": 0.0
+}
+DEFAULT_CONFIG["SAMPLES_PER_TRACK"] = int(DEFAULT_CONFIG["SAMPLE_RATE"] * DEFAULT_CONFIG["DURATION"])
+TOTAL_INPUT_CHANNELS = DEFAULT_CONFIG["N_MELS"] + DEFAULT_CONFIG["N_MFCC"]
+
+# Grid Search Space
+HP_GRID = {
+    "BATCH_SIZE": [16],
+    "LR": [5e-4, 1e-3],         
+    "WEIGHT_DECAY": [1e-4],
+    "OPTIMIZER": ["AdamW"],
+    "LABEL_SMOOTHING": [0.0, 0.1],
+    "DROPOUT": [0.15, 0.2, 0.25],
+    "HIDDEN_DIM": [192]
+}
+
+TUNING_EPOCHS = 10
+FINAL_EPOCHS = 50
+
+TARGET_CLASSES = ["COPD", "Healthy", "Pneumonia", "Other"]
+LABEL_MAP = {c: i for i, c in enumerate(TARGET_CLASSES)}
+
+DISEASE_MAPPING = {
+    'COPD': 'COPD', 'Healthy': 'Healthy', 'Pneumonia': 'Pneumonia',
+    'Asthma': 'Other', 'LRTI': 'Other', 'Bronchiectasis': 'Other',
+    'Bronchiolitis': 'Other', 'URTI': 'Other'
+}
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 4[39m
+[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01msys[39;00m
+[32m      2[39m sys.setrecursionlimit([32m10000[39m)
+[32m----> [39m[32m4[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mos[39;00m,[38;5;250m [39m[34;01mglob[39;00m,[38;5;250m [39m[34;01mnumpy[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnp[39;00m,[38;5;250m [39m[34;01mpandas[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mpd[39;00m,[38;5;250m [39m[34;01mlibrosa[39;00m,[38;5;250m [39m[34;01mtorch[39;00m,[38;5;250m [39m[34;01mcopy[39;00m,[38;5;250m [39m[34;01mtime[39;00m
+[32m      5[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mtorch[39;00m[34;01m.[39;00m[34;01mnn[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnn[39;00m
+[32m      6[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mtorch[39;00m[34;01m.[39;00m[34;01mutils[39;00m[34;01m.[39;00m[34;01mdata[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Dataset, DataLoader
+
+[31mModuleNotFoundError[39m: No module named 'pandas'
+

@@ -30,6 +30,13 @@ parts:
       - file: final-project-deliverables/phase2ppr
         sections:
           - file: final-project-deliverables/week2NR
+      - file: final-project-deliverables/phase3ppr
+        sections:
+          - file: final-project-deliverables/week3NR
+      - file: final-project-deliverables/[manuscript]DL-FINAL-PROJECT-PULMOSCOPE.pdf
+        sections:
+          - file: final-project-deliverables/week4NR
+
 
   - caption: "Blog"
     chapters:
