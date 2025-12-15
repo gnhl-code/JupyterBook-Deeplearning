@@ -2,4 +2,4 @@
 ---
 
 Jupyter Book site link:
-https://gnhl-code.github.io/DeepLearning/
+https://gnhl-code.github.io/JupyterBook-Deeplearning/
