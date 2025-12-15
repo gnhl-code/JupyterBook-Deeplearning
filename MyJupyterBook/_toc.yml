@@ -37,7 +37,7 @@ parts:
       - file: final-project-deliverables/pulmoscope-page
         sections:
           - file: final-project-deliverables/EDA-PulmoScope
-          - file: final-project-deliverables/PulmoScope
+          - file: final-project-deliverables/pulmoScope
 
 
   - caption: "Blog"

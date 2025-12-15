@@ -1,4 +1,4 @@
-# Project PulmoScope
+# **Project PulmoScope**
 
 **A Comparative Study of Hybrid TCN-SNN and Temporal Deep Learning Models for Multi-Class Respiratory Disease Detection from Lung Auscultation Sounds**
 
