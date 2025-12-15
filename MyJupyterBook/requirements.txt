@@ -5,3 +5,13 @@ torch
 scikit-learn
 torchvision
 datasets
+librosa
+pandas
+seaborn
+tqdm
+transformers
+wandb
+plotly
+plotly-express
+ipywidgets
+
