@@ -1,7 +1,6 @@
-<div style="font-family: sans-serif; max-width: 800px; padding: 20px;">
-    <h1 style="color: #2c3e50; border-bottom: 2px solid #eaecef; padding-bottom: 10px;">
-        Hi there! I'm Genny.
-    </h1> 
+# Welcome!
+
+<div>
     <p style="font-size: 1.1em; line-height: 1.6; color: #4a4a4a;">
         Welcome to my digital garden! My name is <strong>Genheylou Deligero Felisilda</strong>, and I am a 
         4th-year <strong>Data Science Undergraduate</strong>.
